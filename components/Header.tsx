@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown, Phone } from "lucide-react"
 
 export default function Header(){
     return(
-        <div className="bg-main w-full flex flex-row justify-between items-center ">
+        <div className="bg-main  w-full flex flex-row justify-between items-center ">
             {/* the logo */}
             <div className=" ">
                 <Image 
@@ -52,16 +52,13 @@ export default function Header(){
                 </div>
 
                 {/* get quote button */}
-                <div className=" bg-secondary  py-2 px-3 font-medium  text-sm rounded-3xl text-main">
-                    <div className="hover:animate__animated animate__slideInUp flex flex-row  gap-2 items-center ">
-                        <button>
-                            Get Free Quote
-                        </button>
-                         <ArrowRight/>
-                    </div>
+                <div className=" bg-secondary flex flex-row  gap-2 items-center py-2 px-3 text-sm rounded-3xl text-main">
+                    <button>
+                        Get Free Quote
+                    </button>
+                    <ArrowRight/>
                 </div>
             </div>
-
-        </div>
+        </div> 
     )
 }

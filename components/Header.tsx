@@ -2,6 +2,7 @@ import { logo } from "../app/assets/assets"
 import Image from "next/image"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,DropdownMenuSeparator } from "./ui/dropdown-menu"
 import { ArrowRight, ChevronDown, Phone } from "lucide-react"
+import Link from "next/link"
 
 
 export default function Header(){
@@ -19,11 +20,11 @@ export default function Header(){
             {/* the navbar content */}
              <nav>            
                 <ul className="flex flex-row gap-8 items-center text-base font-medium">
-                    <li className="hover:text-primary cursor-pointer ">Home</li>
+                    <Link href="/" className="hover:text-primary cursor-pointer ">Home</Link>
                     <DropdownMenu> 
                         <DropdownMenuTrigger asChild>
                            <button className="flex flex-row gap-1 items-center focus:outline-none cursor-pointer hover:text-primary ">
-                                <li>Services</li>
+                                <Link href="">Services</Link>
                                 <ChevronDown className="size-4" />
                            </button>
                         </DropdownMenuTrigger>
@@ -35,9 +36,9 @@ export default function Header(){
                         </DropdownMenuContent>
                     </DropdownMenu>
 
-                    <li className="hover:text-primary cursor-pointer ">About</li>
-                    <li className="hover:text-primary cursor-pointer ">Blogs</li>
-                    <li className="hover:text-primary cursor-pointer ">Contact</li>
+                    <Link href="" className="hover:text-primary cursor-pointer ">About</Link>
+                    <Link href="/blogs"  className="hover:text-primary cursor-pointer ">Blogs</Link>
+                    <Link href="/contact" className="hover:text-primary cursor-pointer ">Contact</Link>
                 </ul>
              </nav>
 

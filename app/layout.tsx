@@ -36,15 +36,17 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${geistMono.variable} antialiased `}
       >
-        <div className="p-6">
+        
           <header>
             <Header />
           </header>
-          {children}
+          <div className="px-6">
+          {children}  
           <footer>
             <Footer />
           </footer>
-        </div>
+          </div>
+        
 
       </body>
     </html>

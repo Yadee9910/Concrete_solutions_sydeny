@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown, Phone } from "lucide-react"
 
 export default function Header(){
     return(
-        <div className="bg-main  w-full flex flex-row justify-between items-center ">
+        <div className="bg-main px-6 py-4 w-full flex flex-row justify-between items-center ">
             {/* the logo */}
             <div className=" ">
                 <Image 

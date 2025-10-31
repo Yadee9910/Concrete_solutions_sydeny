@@ -7,7 +7,7 @@ import { RiTiktokFill } from "react-icons/ri";
 
 export default function Footer(){
     return(
-        <div className="w-full text-main py-10 px-12 bg-secondary grid grid-cols-2 gap-40 rounded-lg">
+        <div className="w-full text-main py-10 px-12 bg-secondary grid grid-cols-2 gap-30 rounded-lg">
            
             {/* the company details col */}
             <div className="flex flex-col gap-5">

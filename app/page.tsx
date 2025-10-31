@@ -156,7 +156,43 @@ function page() {
     {/* <---home service section----> */}
     <ServicesHome />
 
+    {/* <----delivering section ------> */}
+    <div className="min-h-[88vh] flex flex-col gap-12 mx-auto py-6 max-w-6xl">
+        
+        {/* the header  */}
+        <div className="text-center">
+            <h2 className="text-2xl md:text-5xl font-semibold text-secondary leading-tight">
+               Delivering Excellence Through <span className="text-primary block"> Expertise and Dedication </span>    
+            </h2>
+        </div> 
+        
+          {/* the stats */}
+          <div className="grid grid-cols-2 gap-20">
+            <div className="flex flex-col gap-2 bg-main shadow-xl p-6 rounded-lg  border border-main/20">
+                <h1 className="text-secondary animate-pulse  font-bold text-6xl">98%</h1>
+                <p className="text-text leading-relaxed tracking-wider">We use efficient project management to meet timelines for all your hardscaping and bricklaying needs</p>
+            </div>
+
+            <div className="flex flex-col gap-2 bg-main shadow-xl p-6 rounded-lg  border border-main/20">
+                <h1 className="text-secondary animate-pulse  font-bold text-6xl">750+</h1>
+                <p className="text-text leading-relaxed tracking-wider">Proven experience in residential, commercial, and specialist projects across all of Sydney Metro</p>
+            </div>
+
+          </div>
+
+            {/* the get quote section */}
+            <div className="text-center ">
+              <div className="bg-white flex flex-col gap-3  justify-center items-center rounded-2xl p-8 shadow-lg border border-gray-200 max-w-2xl mx-auto ">
+                <h3 className="text-2xl font-semibold text-dark">Ready to Start Your Project?</h3>
+                <p className="text-text">Join 750+ satisfied clients who trusted us with their vision</p>
+                <button className="bg-primary w-fit cursor-pointer text-main px-8 py-3 rounded-lg font-semibold transition duration-300 transform hover:-translate-y-1 ">
+                    Get Your Free Quote
+                </button>
+              </div>
+
+            </div>
     </div>
+  </div>
 
   );
 }

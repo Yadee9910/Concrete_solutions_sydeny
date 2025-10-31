@@ -1,9 +1,11 @@
+import BlogCard from "@/components/cards/BlogCard";
 import ClientHome from "@/pages/Home/ClientHome";
 import ContactHome from "@/pages/Home/ContactHome";
 import Indicators from "@/pages/Home/Indicators";
 import ServicesHome from "@/pages/Home/ServicesHome";
 import {
   ArrowLeftRight,
+  ArrowRight,
   Building,
   Home,
   Phone,
@@ -13,6 +15,7 @@ import {
 function page() {
   return (
     <div className="flex flex-col gap-5">
+
       {/* <----the who we are section-------> */}
       <div className="min-h-[88vh] bg-main py-8  px-4">
         {/* Main content section */}
@@ -213,6 +216,28 @@ function page() {
 
       {/* <---contact section----> */}
       <ContactHome />
+
+      {/* <---blog section----> */}
+      <div className='min-h-[88vh] flex flex-col gap-6 px-8 py-4 rounded-lg'>
+        <h1 className="text-center text-4xl font-semibold text-secondary tracking-wider">Latest Blogs</h1>
+        
+        {/* blog cards */}
+        <div className="w-full grid grid-cols-4 gap-6">
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+        </div>
+
+          {/* view all blogs btn */}
+        <div className="flex justify-center flex-row ">
+            <button className=" bg-secondary rounded-3xl items-center gap-2 py-2 px-4 text-sm text-main  flex flex-row">
+              View All Blogs 
+              <ArrowRight />
+            </button>
+             
+        </div>
+      </div>
     </div>
   );
 }

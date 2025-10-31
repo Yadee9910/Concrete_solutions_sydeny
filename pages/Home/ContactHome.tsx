@@ -8,7 +8,7 @@ function ContactHome() {
 
 
   return (
-    <div className="min-h-[88vh] bg-linear-to-br from-text/10 to-gray/20 py-6 px-4">
+    <div className="min-h-[88vh] bg-linear-to-br from-text/10 to-gray/20 py-8 px-4">
       
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}

@@ -1,11 +1,13 @@
+import HeroCard from '@/components/cards/HeroCard'
 import ContactForm from '@/components/ContactForm'
 import { Clock, Mail, Phone } from 'lucide-react'
-import React from 'react'
-import { MdEmail } from 'react-icons/md'
+
 
 function Contact() {
   return (
-    <div className='min-h-[88vh] py-4 '>
+    <>
+    <HeroCard title="Contact Us" page="CONTACT US" btn="Get In Touch"/>
+    <div className='min-h-screen py-20 '>
       <div className=' px-12 mx-auto max-w-7xl flex flex-col'>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -87,10 +89,10 @@ function Contact() {
                 <ContactForm />
             </div>
         </div>
-
-
       </div>
     </div>
+    </>
+
   )
 }
 

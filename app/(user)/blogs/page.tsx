@@ -5,7 +5,7 @@ import HeroCard from '@/components/cards/HeroCard'
 function Blogs() {
   return (
     <div className=' flex flex-col gap-8 h-auto w-full pb-8'>
-        <HeroCard />
+        <HeroCard title="Latest Blog" page="BLOGS" btn="Our Blog"/>
    
     {/* the blog section */}
         <div className='bg-secondary/5 rounded-lg p-8'>

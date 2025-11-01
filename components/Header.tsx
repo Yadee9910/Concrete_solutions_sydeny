@@ -36,7 +36,7 @@ export default function Header(){
                         </DropdownMenuContent>
                     </DropdownMenu>
 
-                    <Link href="" className="hover:text-primary cursor-pointer ">About</Link>
+                    <Link href="/about" className="hover:text-primary cursor-pointer ">About</Link>
                     <Link href="/blogs"  className="hover:text-primary cursor-pointer ">Blogs</Link>
                     <Link href="/contact" className="hover:text-primary cursor-pointer ">Contact</Link>
                 </ul>

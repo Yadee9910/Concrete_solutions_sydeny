@@ -1,5 +1,6 @@
 import HeroSection from "@/components/home/HeroSection";
 import Indicators from "@/components/home/Indicators";
+import ServicesHome from "@/components/home/ServicesHome";
 import WhoWeAre from "@/components/home/WhoweAre";
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
         <HeroSection />
         <Indicators />
         <WhoWeAre />
+        <ServicesHome />
       </main>
     </>
   );

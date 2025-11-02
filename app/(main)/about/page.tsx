@@ -81,7 +81,7 @@ function About() {
             className="space-y-4 md:space-y-6"
           >
             <p className="text-md text-text leading-relaxed">
-              We are RRR Bricklaying, a team of fully licensed, dedicated
+              We are Concrete Solutions Bricklaying, a team of fully licensed, dedicated
               professional bricklayers and mason bricklayers proudly serving the
               entire Sydney Metro area for over 5 years. We specialize in
               delivering not just flawless brickwork, but complete, integrated
@@ -153,7 +153,7 @@ function About() {
             >
               <Image
                 src={image}
-                alt={`RRR Bricklaying project showcase ${index + 1}`}
+                alt={`Concrete Solutions Bricklaying project showcase ${index + 1}`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

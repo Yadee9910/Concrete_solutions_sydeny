@@ -8,15 +8,14 @@ import AboutUsCard from "@/components/cards/AboutUsCard";
 import { Wrench } from "lucide-react";
 import ToggleDownCard from "@/components/cards/ToggleDownCard";
 
-interface DropdwonItem {
+export interface DropdownItemProps {
   id: string;
   title: string;
   content: string;
-  isPlaceholder?: boolean;
 }
 
 function About() {
-  const dropdownItems: DropdwonItem[] = [
+  const dropdownItems: DropdownItemProps[] = [
     {
       id: "mission",
       title: "Our Mission",

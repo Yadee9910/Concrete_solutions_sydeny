@@ -8,8 +8,8 @@ import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"], // choose the weights you need
-  variable: "--font-poppins", // optional (for Tailwind)
+  weight: ["300", "400", "500", "600", "700"], 
+  variable: "--font-poppins", 
 });
 
 const geistSans = Geist({

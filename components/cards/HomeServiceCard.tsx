@@ -1,46 +1,81 @@
-import { img } from '@/app/assets/assets'
-import { MoveUpRight } from 'lucide-react'
-import Image from 'next/image'
-import React from 'react'
+"use client";
 
-function HomeServiceCard() {
-  return (
-    <div className="bg-main flex flex-col h-[60vh] rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 w-full max-w-sm">
-      
-      {/* Image section */}
-        <div className="relative w-full bg-white ">
-            <Image
-            src={img}
-            alt="service img"
-            width={300}
-            height={200}
-            className="w-full h-[35vh]  "
-            />
-        </div>
+import { motion } from "framer-motion";
+import { LucideIcon, ArrowRight } from "lucide-react";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
-        {/* Content section */}
-        <div className="relative p-4 py-4 flex flex-col gap-2 text-secondary bg-main rounded-t-4xl ">
-            <div className='absolute -top-3 h-3 rounded-t-full left-0 right-0 bg-main'></div>
-            <h3 className="text-lg font-semibold ">Landscaping Services</h3>
-            <div className='flex justify-end flex-col  h-full items-end'>
-                <p className="text-sm text-text/80 tracking-wider text-left">
-                    We provide high-quality landscaping solutions to enhance the beauty and functionality of your outdoor spaces.
-                </p>
-            </div>
-
-            <div className=' inline-flex p-2 items-center justify-between'>
-                <p className='text-base underline underline-offset-4 hover:font-medium cursor-pointer'>
-                    View details
-                </p>
-                <div className='flex cursor-pointer hover:bg-secondary/70 bg-secondary justify-end p-2 rounded-full'>
-                    <MoveUpRight  className='text-main'/>
-                </div>
-               
-            </div>
-            
-        </div>
-    </div>
-  )
+interface HomeServiceCardProps {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  image: string | StaticImageData;
+  href: string;
+  features?: string[];
 }
 
-export default HomeServiceCard
+export default function HomeServiceCard({
+  title,
+  description,
+  icon: Icon,
+  image,
+  href,
+  features = [],
+}: HomeServiceCardProps) {
+  return (
+    <Link href={href}>
+      <motion.div
+        whileHover={{ y: -8 }}
+        className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full border border-gray-100"
+      >
+        {/* Image Section */}
+        <div className="relative h-44 overflow-hidden bg-linear-to-br from-secondary/10 to-primary/10">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-secondary/80 to-transparent opacity-60" />
+
+          {/* Icon Badge */}
+          <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-2 rounded-xl shadow-lg group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+            <Icon className="w-6 h-6 text-secondary group-hover:text-white transition-colors" />
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="p-4">
+          <h3 className="text-lg font-bold text-secondary mb-1 group-hover:text-primary transition-colors">
+            {title}
+          </h3>
+
+          <p className="text-gray-600 text-xs leading-relaxed mb-2 line-clamp-3">
+            {description}
+          </p>
+
+          {/* Features List */}
+          {features.length > 0 && (
+            <ul className="space-y-2 mb-2">
+              {features.slice(0, 3).map((feature, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 text-xs text-gray-600"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1 shrink-0" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* CTA Button */}
+          <div className="flex items-center gap-2 text-secondary group-hover:text-primary transition-colors font-semibold text-sm pt-1 border-t border-gray-100">
+            <span>Learn More</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+}

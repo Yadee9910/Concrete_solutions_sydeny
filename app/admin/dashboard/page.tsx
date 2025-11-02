@@ -1,4 +1,3 @@
-import { redirect } from "next/navigation";
 import { DashboardContent } from "@/components/admin/DashboardContent";
 
 export const metadata = {

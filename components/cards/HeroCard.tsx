@@ -18,12 +18,12 @@ function HeroCard({ title, page, btn }: HeroCardProps) {
   });
 
   return (
-    <section ref={ref} className="px-4 sm:px-6 md:px-8 lg:px-12 py-6 md:py-8">
+    <section ref={ref} className="px-2 md:px-4 2xl:px-12 lg:px-14 py-6 md:py-8">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="bg-secondary w-full py-6 md:py-8 px-4 sm:px-8 md:px-12 lg:px-16 text-main rounded-lg shadow-xl"
+        className="bg-secondary w-full py-6 md:py-8 px-4 sm:px-12 md:px-0 lg:px-14 text-main rounded-lg shadow-xl"
       >
         <div className="rounded-lg p-4 sm:p-6 md:p-8 lg:p-16 flex flex-col gap-3 md:gap-4">
           {/* Button Badge */}

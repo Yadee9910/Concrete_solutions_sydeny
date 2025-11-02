@@ -30,7 +30,7 @@ export default function ToggleDownCard({
         whileTap={{ scale: 0.98 }}
         className="w-full flex justify-between items-center p-4 sm:p-5 md:p-6 text-left bg-main cursor-pointer transition-colors duration-200"
       >
-        <h3 className="text-base sm:text-lg tracking-wide font-bold text-secondary pr-4">
+        <h3 className="text-base  tracking-wide font-bold text-secondary pr-4">
           {title}
         </h3>
 

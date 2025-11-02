@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,18 +37,17 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${geistMono.variable} antialiased `}
       >
-        
-          <header>
-            <Header />
-          </header>
-          <div className="px-6">
-          {children}  
+        <header>
+          <Header />
+        </header>
+        <div className="px-6">
+          {children}
           <footer>
             <Footer />
           </footer>
-          </div>
-        
+        </div>
 
+        <Toaster position="top-right" />
       </body>
     </html>
   );

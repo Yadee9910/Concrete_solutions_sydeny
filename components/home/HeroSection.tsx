@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ArrowRight, Shield, Award, Users, Star } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -37,9 +36,9 @@ export default function HeroSection() {
           className="relative bg-white rounded-3xl overflow-hidden shadow-2xl"
         >
           {/* Content Grid */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-12 lg:p-14">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 p-8">
             {/* Left Column - Content */}
-            <div className="flex flex-col justify-center space-y-6">
+            <div className="flex flex-col justify-center space-y-2">
               {/* Small Badge */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -58,7 +57,7 @@ export default function HeroSection() {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary leading-tight">
+                <h1 className="text-3xl md:text-4xl sm:text-5xl font-bold text-secondary leading-tight">
                   Expert Concrete &
                   <span className="block text-primary mt-2">
                     Bricklaying Solutions
@@ -71,7 +70,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-lg text-gray-600 leading-relaxed"
+                className="text-xs md:text-md text-gray-600 leading-relaxed"
               >
                 Transform your property with Sydney&apos;s trusted concrete
                 contractors. From driveways to retaining walls, we deliver
@@ -115,13 +114,13 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="pt-2"
+                className="pt-3"
               >
                 <Link href="/contact">
                   <motion.button
                     whileHover={{ scale: 1.05, x: 5 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center gap-3 bg-secondary hover:bg-hover text-white px-8 py-4 rounded-xl text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="group inline-flex items-center gap-3 bg-secondary hover:bg-hover text-white px-4 md:px-8 py-4 rounded-xl text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <span>Get Your Free Quote</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -130,7 +129,7 @@ export default function HeroSection() {
               </motion.div>
             </div>
 
-            {/* Right Column - Image */}
+            {/* Right Column - Video */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -138,18 +137,20 @@ export default function HeroSection() {
               className="relative flex items-center justify-center"
             >
               <div className="relative w-full">
-                {/* Main Image Card */}
-                <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-4/3 bg-gray-100">
-                  <Image
-                    src="/images/hero-bricklaying.jpg"
-                    alt="Professional concrete and bricklaying work in Sydney"
-                    fill
-                    className="object-cover"
-                    priority
+                {/* Main Video Card */}
+                <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-video bg-gray-100">
+                  <video
+                    src="/videos/hero-vid.mp4"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="/images/hero-bricklaying.jpg"
                   />
 
                   {/* 100% Badge Overlay */}
-                  <div className="absolute top-4 right-4 bg-secondary text-white px-5 py-3 rounded-xl shadow-lg">
+                  <div className="hidden md:block absolute top-4 right-4 bg-secondary text-white px-5 py-3 rounded-xl shadow-lg z-10">
                     <div className="text-3xl font-bold leading-none mb-1">
                       100%
                     </div>
@@ -159,7 +160,7 @@ export default function HeroSection() {
                   </div>
 
                   {/* Rating Badge - Bottom Right */}
-                  <div className="absolute inset-0 flex items-end justify-end p-6">
+                  <div className="hidden md:flex absolute inset-0 items-end justify-end p-6">
                     <motion.div
                       initial={{ opacity: 0, scale: 0 }}
                       animate={inView ? { opacity: 1, scale: 1 } : {}}

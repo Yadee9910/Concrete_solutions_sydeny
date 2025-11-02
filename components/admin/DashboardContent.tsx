@@ -87,7 +87,7 @@ export const DashboardContent = () => {
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-          <Button variant="outline" onClick={handleLogout}>
+          <Button variant="outline" onClick={handleLogout} className="cursor-pointer">
             Logout
           </Button>
         </div>
@@ -97,7 +97,7 @@ export const DashboardContent = () => {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-semibold">Blog Posts</h2>
           <Link href="/admin/blog/create">
-            <Button>Create New Post</Button>
+            <Button className="cursor-pointer">Create New Post</Button>
           </Link>
         </div>
 
@@ -105,7 +105,7 @@ export const DashboardContent = () => {
           <div className="bg-white rounded-lg shadow p-8 text-center">
             <p className="text-gray-500 mb-4">No blog posts yet</p>
             <Link href="/admin/blog/create">
-              <Button>Create Your First Post</Button>
+              <Button className="cursor-pointer">Create Your First Post</Button>
             </Link>
           </div>
         ) : (

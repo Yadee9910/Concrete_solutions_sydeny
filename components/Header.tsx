@@ -28,7 +28,7 @@ export default function Header(){
                                 <ChevronDown className="size-4" />
                            </button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="start" className="rounded-lg text-text text-lg border-gray shadow-sm">
+                        <DropdownMenuContent align="start" className="rounded-lg text-text text-lg bg-main border-gray shadow-sm">
                             <DropdownMenuItem className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Landscaping</DropdownMenuItem>  <DropdownMenuSeparator className="bg-text/10 h-px" />
                             <DropdownMenuItem className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Landscaping</DropdownMenuItem>
                              <DropdownMenuSeparator className="bg-text/10 h-px" />

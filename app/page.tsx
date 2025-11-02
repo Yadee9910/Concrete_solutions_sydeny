@@ -1,3 +1,4 @@
+import DeliveringExcellence from "@/components/home/DeliveringExcellence";
 import HeroSection from "@/components/home/HeroSection";
 import Indicators from "@/components/home/Indicators";
 import ServicesHome from "@/components/home/ServicesHome";
@@ -11,6 +12,7 @@ export default function HomePage() {
         <Indicators />
         <WhoWeAre />
         <ServicesHome />
+        <DeliveringExcellence />
       </main>
     </>
   );

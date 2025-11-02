@@ -1,0 +1,10 @@
+import { redirect } from "next/navigation";
+import { DashboardContent } from "@/components/admin/DashboardContent";
+
+export const metadata = {
+  title: "Admin | Dashboard",
+};
+
+export default function DashboardPage() {
+  return <DashboardContent />;
+}

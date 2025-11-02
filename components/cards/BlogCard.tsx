@@ -2,9 +2,15 @@ import { blog1 } from '@/app/assets/assets'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import Link from 'next/link'
 
-function BlogCard() {
+interface BlogCardProps {
+  slug?: string
+}
+
+function BlogCard({ slug = "transform-sloped-sydney-backyard" }: BlogCardProps) {
   return (
+    <Link href={`/blogs/${slug}`} className="block hover:no-underline">
       <div
       className="flex flex-col gap-3 bg-main rounded-t-lg rounded-b-lg cursor-pointer 
                  transform transition-transform duration-300 ease-in-out 
@@ -42,9 +48,8 @@ function BlogCard() {
                 <p  className='text-xs text-secondary font-semibold'>By Liam O'Conne </p>
             </div>
         </div>
-
-
     </div>
+    </Link>
   )
 }
 

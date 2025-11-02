@@ -1,53 +1,109 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "../components/Header";
+import { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"], 
-  variable: "--font-poppins", 
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Concrete Solutions Sydney",
-  description: "Concrete Solutions Sydney",
+  metadataBase: new URL("https://yourdomain.com"),
+  title: {
+    default: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    template: "%s | RRR Bricklaying",
+  },
+  description:
+    "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney. 100% quality guaranteed. Get a free quote today!",
+  keywords: [
+    "bricklaying Sydney",
+    "concrete driveways",
+    "retaining walls",
+    "masonry services",
+    "Seven Hills",
+    "Western Sydney",
+  ],
+  authors: [{ name: "RRR Bricklaying" }],
+  creator: "RRR Bricklaying",
+  publisher: "RRR Bricklaying",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: "https://yourdomain.com",
+    siteName: "RRR Bricklaying",
+    title: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    description:
+      "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
+    images: [
+      {
+        url: "https://yourdomain.com/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "RRR Bricklaying",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    description:
+      "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
+    images: ["https://yourdomain.com/images/og-default.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${poppins.variable} ${geistMono.variable} antialiased `}
-      >
-        <header>
-          <Header />
-        </header>
-        <div className="px-6">
-          {children}
-          <footer>
-            <Footer />
-          </footer>
-        </div>
-
-        <Toaster position="top-right" />
+    <html lang="en" className={poppins.variable}>
+      <body className={poppins.className}>
+        <Header />
+        <main className="pt-[100px]">{children}</main>
+        <Footer />
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: "#022b60",
+              color: "#fff",
+            },
+            success: {
+              style: {
+                background: "#F59E0B",
+              },
+            },
+            error: {
+              style: {
+                background: "#ef4444",
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );

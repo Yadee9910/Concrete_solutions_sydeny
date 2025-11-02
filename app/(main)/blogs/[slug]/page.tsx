@@ -49,7 +49,7 @@ export async function generateMetadata({
     const post: BlogPost = await response.json();
 
     return {
-      title: `${post.title} | RRR Bricklaying Blog`,
+      title: `${post.title} | Concrete Solutions Sydeny Bricklaying Blog`,
       description: post.description,
       openGraph: {
         title: post.title,

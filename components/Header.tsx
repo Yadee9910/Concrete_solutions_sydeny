@@ -1,11 +1,14 @@
+"use client"
 import { logo } from "../app/assets/assets"
 import Image from "next/image"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,DropdownMenuSeparator } from "./ui/dropdown-menu"
 import { ArrowRight, ChevronDown, Phone } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 
 export default function Header(){
+    const router = useRouter()
     return(
         <div className="bg-main px-6 py-4 h-[12vh] w-full flex flex-row justify-between items-center ">
             {/* the logo */}
@@ -29,10 +32,10 @@ export default function Header(){
                            </button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="start" className="rounded-lg text-text text-lg bg-main border-gray shadow-sm">
-                            <DropdownMenuItem className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Landscaping</DropdownMenuItem>  <DropdownMenuSeparator className="bg-text/10 h-px" />
-                            <DropdownMenuItem className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Landscaping</DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => router.push("/services/landscaping")} className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Landscaping</DropdownMenuItem>  <DropdownMenuSeparator className="bg-text/10 h-px" />
+                            <DropdownMenuItem onClick={() => router.push("/services/bricklaying")} className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Bricklaying</DropdownMenuItem>
                              <DropdownMenuSeparator className="bg-text/10 h-px" />
-                            <DropdownMenuItem className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Landscaping</DropdownMenuItem>                   
+                            <DropdownMenuItem onClick={() => router.push("/services/retaining")} className="cursor-pointer hover:translate-x-2 transition-transform duration-200 ease-in-out hover:text-primary  px-4 py-2 text-sm tracking-wide ">Retaining Walls</DropdownMenuItem>                   
                         </DropdownMenuContent>
                     </DropdownMenu>
 

@@ -182,22 +182,7 @@ function BlogDetail() {
             </div>
           </div>
 
-          {/* Bottom CTA Section - Common for both columns */}
-          <div className='bg-linear-to-br from-primary to-secondary rounded-2xl p-8 text-center text-white mt-12'>
-            <h3 className='text-2xl font-bold mb-4'>Ready to Transform Your Sloped Backyard?</h3>
-            <p className='text-white/90 mb-6 max-w-xl mx-auto'>
-              Get a free consultation with our Sydney landscaping experts and discover how we can turn your challenging terrain into a stunning outdoor oasis.
-            </p>
-            <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-              <Link
-                href="/contact"
-                className='inline-flex items-center gap-3 bg-white text-secondary px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg'
-              >
-                Book Free Consultation
-                <ArrowUpRight className='size-5' />
-              </Link>
-            </div>
-          </div>
+  
 
         </div>
       </main>

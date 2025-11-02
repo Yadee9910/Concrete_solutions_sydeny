@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import HeroCard from "@/components/cards/HeroCard";
-import Indicators from "@/pages/Home/Indicators";
+import Indicators from "@/components/home/Indicators";
 import Image from "next/image";
 import { img } from "@/app/assets/assets";
 import AboutUsCard from "@/components/cards/AboutUsCard";

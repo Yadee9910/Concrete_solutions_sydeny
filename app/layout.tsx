@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
@@ -81,9 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className={poppins.className}>
-        <Header />
-        <main className="pt-[100px]">{children}</main>
-        <Footer />
+        {children}
         <Toaster
           position="top-right"
           toastOptions={{

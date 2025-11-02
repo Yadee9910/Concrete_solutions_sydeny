@@ -8,8 +8,8 @@ function Blogs() {
         <HeroCard title="Latest Blog" page="BLOGS" btn="Our Blog"/>
    
     {/* the blog section */}
-        <div className='bg-secondary/5 rounded-lg p-8'>
-            <div className='grid grid-cols-4 gap-8 '>
+        <div className='bg-secondary/5 rounded-lg py-24 px-50'>
+            <div className='grid grid-cols-3 gap-12 '>
                 <BlogCard />
                 <BlogCard />
                 <BlogCard />

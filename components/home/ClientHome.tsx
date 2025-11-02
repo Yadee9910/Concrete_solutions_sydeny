@@ -3,65 +3,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { prof } from "@/app/assets/assets";
 import ClientCard from "@/components/cards/ClientCard";
+import { testimonials } from "@/data/clients";
 
-const testimonials = [
-  {
-    name: "Michael B.",
-    role: "CEO & Property Manager",
-    location: "Parramatta",
-    testimonial:
-      "I manage several properties and needed reliable retaining wall contractors in Sydney for a complex, failing wall. RRR's team were outstanding. They identified the core yard drainage problem immediately, then designed and built a new, structurally sound retaining wall that is built to last.",
-    rating: 5,
-    image: prof,
-  },
-  {
-    name: "Sarah Johnson",
-    role: "Homeowner",
-    location: "Seven Hills",
-    testimonial:
-      "Exceptional service from start to finish! The concrete driveway they installed exceeded our expectations. Professional, punctual, and the quality of work is outstanding. Highly recommend RRR Bricklaying for any concrete work.",
-    rating: 5,
-    image: prof,
-  },
-  {
-    name: "David Chen",
-    role: "Builder",
-    location: "Western Sydney",
-    testimonial:
-      "We've worked with RRR on multiple commercial projects. Their attention to detail and commitment to quality is unmatched. They're our go-to contractors for all bricklaying and concrete work. Always deliver on time and within budget.",
-    rating: 5,
-    image: prof,
-  },
-  {
-    name: "Emma Wilson",
-    role: "Restaurant Owner",
-    location: "Blacktown",
-    testimonial:
-      "They transformed our outdoor dining area with beautiful exposed aggregate pathways. The team was professional, clean, and completed the work ahead of schedule. Our customers constantly compliment the new look!",
-    rating: 5,
-    image: prof,
-  },
-  {
-    name: "James Martinez",
-    role: "Architect",
-    location: "Castle Hill",
-    testimonial:
-      "As an architect, I work with many contractors. RRR Bricklaying stands out for their precision and understanding of complex designs. They bring my visions to life with exceptional craftsmanship. A true pleasure to work with.",
-    rating: 5,
-    image: prof,
-  },
-  {
-    name: "Lisa Anderson",
-    role: "Homeowner",
-    location: "The Hills District",
-    testimonial:
-      "Our retaining wall project was completed flawlessly. From the initial consultation to the final inspection, everything was handled professionally. The team was knowledgeable, courteous, and the quality speaks for itself.",
-    rating: 5,
-    image: prof,
-  },
-];
 
 export default function ClientHome() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -128,7 +72,7 @@ export default function ClientHome() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-block bg-secondary text-main rounded-full py-2 px-6 text-sm font-semibold mb-4 shadow-md"
+            className="inline-block bg-secondary text-main rounded-full py-2 px-6 text-xs font-semibold mb-4 shadow-md"
           >
             Loved by Our Clients
           </motion.span>
@@ -137,7 +81,7 @@ export default function ClientHome() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4 leading-tight"
+            className="text-3xl md:text-4xl font-bold text-secondary mb-2 leading-tight"
           >
             What Our Clients Say
           </motion.h2>
@@ -146,10 +90,10 @@ export default function ClientHome() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-gray-600 leading-relaxed"
+            className="text-md text-gray-600 leading-relaxed"
           >
             Client feedback is the measure of our success. Read what homeowners
-            and builders are saying about RRR Bricklaying&apos;s reliability and
+            and builders are saying about Concrete Solutions Sydeny Bricklaying&apos;s reliability and
             quality.
           </motion.p>
         </motion.div>

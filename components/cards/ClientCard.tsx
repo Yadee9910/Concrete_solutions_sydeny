@@ -33,7 +33,7 @@ export default function ClientCard({
       </div>
 
       {/* Header with Profile */}
-      <div className="flex items-center gap-4 mb-6 relative z-10">
+      <div className="flex items-center gap-4 mb-4 relative z-10">
         <div className="relative">
           <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-primary/10">
             <Image
@@ -50,14 +50,14 @@ export default function ClientCard({
         </div>
 
         <div className="flex-1">
-          <h3 className="font-bold text-lg text-secondary">{name}</h3>
-          <p className="text-sm text-gray-600">{role}</p>
+          <h3 className="font-bold text-md text-secondary">{name}</h3>
+          <p className="text-xs text-gray-600">{role}</p>
           <p className="text-xs text-gray-500">{location}</p>
         </div>
       </div>
 
       {/* Testimonial Text */}
-      <p className="text-gray-700 leading-relaxed mb-6 grow line-clamp-6 relative z-10">
+      <p className="text-gray-700 text-sm leading-relaxed mb-6 grow line-clamp-6 relative z-10">
         {testimonial}
       </p>
 

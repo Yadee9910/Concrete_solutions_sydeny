@@ -9,7 +9,7 @@ import BlogSection from "@/components/home/BlogSection";
 import WhoWeAre from "@/components/home/WhoweAre";
 
 export const metadata: Metadata = {
-  title: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+  title: "Concrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
   description:
     "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney. 5+ years experience. 100% quality guaranteed. Get a free quote today!",
   keywords: [
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     canonical: "https://yourdomain.com",
   },
   openGraph: {
-    title: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    title: "COncrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney. 5+ years experience. 100% quality guaranteed.",
     url: "https://yourdomain.com",
-    siteName: "RRR Bricklaying",
+    siteName: "COncrete Solutions Bricklaying",
     images: [
       {
         url: "https://yourdomain.com/images/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: "RRR Bricklaying Services Sydney",
+        alt: "COncrete Solutions Bricklaying Services Sydney",
       },
     ],
     locale: "en_AU",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    title: "COncrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
     images: ["https://yourdomain.com/images/og-home.jpg"],
@@ -67,7 +67,7 @@ export default function HomePage() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "RRR Bricklaying",
+    name: "COncrete Solutions Bricklaying",
     url: "https://yourdomain.com",
     logo: "https://yourdomain.com/images/logo.png",
     description:

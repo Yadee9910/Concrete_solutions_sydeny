@@ -1,66 +1,86 @@
 "use client";
+
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 import HeroCard from "@/components/cards/HeroCard";
 import Indicators from "@/components/home/Indicators";
-import Image from "next/image";
-import { img } from "@/app/assets/assets";
 import AboutUsCard from "@/components/cards/AboutUsCard";
-import { Wrench } from "lucide-react";
 import ToggleDownCard from "@/components/cards/ToggleDownCard";
-
-export interface DropdownItemProps {
-  id: string;
-  title: string;
-  content: string;
-}
+import { img } from "@/app/assets/assets";
+import { dropdownItems, whyChooseUsData } from "@/data/about";
 
 function About() {
-  const dropdownItems: DropdownItemProps[] = [
-    {
-      id: "mission",
-      title: "Our Mission",
-      content:
-        "Our Mission is to be the most reliable and highly-regarded bricklaying contractors in Sydney. We achieve this by always guaranteeing the structural integrity of every project and delivering complete, efficient hardscaping solutions. From simple brickwork to complex retaining walls, we are committed to providing the absolute best service, ensuring efficiency and transparency from project start to finish.",
-    },
-    {
-      id: "vision",
-      title: "Our Vision",
-      content:
-        "We envision a future where every construction project in Sydney benefits from superior masonry and integrated structural design. Our goal is to continually redefine the benchmark for quality and efficiency, setting the industry standard for what clients should expect from a brickwork company. We strive to be the single-source contractor clients rely on for flawless results in excavation, concrete driveways, and specialist mason bricklayer services.",
-    },
-    {
-      id: "core-values",
-      title: "Our Core Values",
-      content:
-        "Our work is guided by three core Values. Precision is our cornerstone, committing us to exact measurements and flawless finishes on all bricklaying and paving work. Reliability means we show up on time, maintain clean worksites, and keep our word, giving you the peace of mind you expect from local bricklayers. Finally, Integrity ensures honest pricing and ethical practices, from the moment we calculate your retaining wall cost to the final project handover.",
-    },
-  ];
+  const [openItem, setOpenItem] = useState<string | null>("mission");
+
+  // Refs for scroll animations
+  const [whoWeAreRef, whoWeAreInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [galleryRef, galleryInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const [whyChooseRef, whyChooseInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   const toggleItem = (id: string) => {
     setOpenItem(openItem === id ? null : id);
   };
 
-  const [openItem, setOpenItem] = useState<string | null>("mission");
+  const galleryImages = Array(6).fill(img);
+
   return (
-    <div className="flex flex-col gap-6">
+    <main className="flex flex-col">
+      {/* Hero Section */}
       <HeroCard title="About Us" page="ABOUT US" btn="Who We Are" />
 
-        {/* the who we are section */}
-      <div className="grid grid-cols-2 gap-12 px-24 py-12 items-center min-h-[88vh]">
-        <div>
-          {/* header */}
-          <div className="space-y-6">
-            <h1 className=" bg-secondary w-fit p-2  font-medium text-main rounded-3xl py-2 px-4 text-sm leading-tight">
+      {/* Who We Are Section */}
+      <section
+        ref={whoWeAreRef}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 items-center min-h-[70vh]"
+      >
+        {/* Left Column - Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={whoWeAreInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="space-y-4"
+        >
+          {/* Header */}
+          <div className="space-y-4">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={whoWeAreInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-block bg-secondary w-fit font-medium text-main rounded-full py-2 px-4 md:px-6 text-sm shadow-lg"
+            >
               Who We Are
-            </h1>
-            <h2 className="text-2xl md:text-5xl font-semibold text-secondary leading-tight">
-              Your Trusted Financial Partners and Advisors
-            </h2>
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={whoWeAreInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-secondary leading-tight"
+            >
+              Your Trusted Bricklaying Partners in Sydney
+            </motion.h2>
           </div>
 
-          {/* description */}
-          <div className="space-y-6">
-            <p className="text-lg text-text leading-relaxed">
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={whoWeAreInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-4 md:space-y-6"
+          >
+            <p className="text-md text-text leading-relaxed">
               We are RRR Bricklaying, a team of fully licensed, dedicated
               professional bricklayers and mason bricklayers proudly serving the
               entire Sydney Metro area for over 5 years. We specialize in
@@ -68,66 +88,108 @@ function About() {
               hardscape solutions from initial excavation and retaining walls to
               stunning final finishes like concrete driveways and paving.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="space-y-4">
-          {dropdownItems.map((item) => (
-            <ToggleDownCard
+        {/* Right Column - Dropdown Cards */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={whoWeAreInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="space-y-3"
+        >
+          {dropdownItems.map((item, index) => (
+            <motion.div
               key={item.id}
-              id={item.id}
-              title={item.title}
-              content={item.content}
-              isOpen={openItem === item.id}
-              onToggle={toggleItem}
+              initial={{ opacity: 0, y: 20 }}
+              animate={whoWeAreInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.5,
+                delay: 0.4 + index * 0.1,
+              }}
+            >
+              <ToggleDownCard
+                id={item.id}
+                title={item.title}
+                content={item.content}
+                isOpen={openItem === item.id}
+                onToggle={toggleItem}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Indicators Section */}
+      <section className="w-full">
+        <Indicators />
+      </section>
+
+      {/* Image Gallery Section */}
+      <section
+        ref={galleryRef}
+        className="px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-52 py-8 md:py-12"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={galleryInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 xl:gap-10"
+        >
+          {galleryImages.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={galleryInView ? { opacity: 1, scale: 1 } : {}}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3 },
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            >
+              <Image
+                src={image}
+                alt={`RRR Bricklaying project showcase ${index + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section
+        ref={whyChooseRef}
+        className="flex flex-col gap-6 md:gap-8 lg:gap-10 py-8 min-h-screen px-4 sm:px-6 md:px-12 lg:px-16 xl:px-28"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={whyChooseInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center font-semibold text-2xl sm:text-3xl md:text-4xl text-secondary"
+        >
+          Why Choose Us?
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mx-auto max-w-7xl w-full">
+          {whyChooseUsData.map((card, index) => (
+            <AboutUsCard
+              key={card.title}
+              title={card.title}
+              icon={card.icon}
+              description={card.description}
+              index={index}
             />
           ))}
         </div>
-      </div>
-
-      <div>
-        <Indicators />
-      </div>
-
-      {/* thre image showing section */}
-      <div className="grid grid-cols-3 gap-10 px-52">
-        <Image src={img} alt="about us img" className="rounded-lg " />
-        <Image src={img} alt="about us img" className="rounded-lg " />
-        <Image src={img} alt="about us img" className="rounded-lg " />
-        <Image src={img} alt="about us img" className="rounded-lg" />
-        <Image src={img} alt="about us img" className="rounded-lg" />
-        <Image src={img} alt="about us img" className="rounded-lg" />
-      </div>
-
-      {/* the card component in about us */}
-      <div className="flex flex-col gap-10 py-24 min-h-screen">
-        <h1 className="text-center font-semibold text-4xl text-secondary">
-          Why Choose us?
-        </h1>
-        <div className="grid grid-cols-2 gap-8 h-full px-28 mx-auto max-w-7xl ">
-          <AboutUsCard
-            title="Expert Bricklaying Team"
-            icon={<Wrench className="size-8" />}
-            description="Our team consists of fully licensed, insured, and experienced professional bricklayers and mason bricklayers. We pride ourselves on attention to detail, ensuring every project meets the highest Australian standards for safety and finish."
-          />
-          <AboutUsCard
-            title="Expert Bricklaying Team"
-            icon={<Wrench className="size-8" />}
-            description="Our team consists of fully licensed, insured, and experienced professional bricklayers and mason bricklayers. We pride ourselves on attention to detail, ensuring every project meets the highest Australian standards for safety and finish."
-          />
-          <AboutUsCard
-            title="Expert Bricklaying Team"
-            icon={<Wrench className="size-8" />}
-            description="Our team consists of fully licensed, insured, and experienced professional bricklayers and mason bricklayers. We pride ourselves on attention to detail, ensuring every project meets the highest Australian standards for safety and finish."
-          />
-          <AboutUsCard
-            title="Expert Bricklaying Team"
-            icon={<Wrench className="size-8" />}
-            description="Our team consists of fully licensed, insured, and experienced professional bricklayers and mason bricklayers. We pride ourselves on attention to detail, ensuring every project meets the highest Australian standards for safety and finish."
-          />
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

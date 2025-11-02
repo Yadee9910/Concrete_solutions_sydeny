@@ -10,6 +10,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Image from "next/image";
+import { img, img1 } from "@/app/assets/assets";
 
 const highlights = [
   { icon: Home, label: "Residential" },
@@ -30,7 +31,7 @@ export default function WhoWeAre() {
       className="min-h-[88vh] bg-main py-8 md:py-12 px-4 md:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left Column - Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -52,7 +53,7 @@ export default function WhoWeAre() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary leading-tight"
+                className="text-2xl md:text-4xl font-bold text-secondary leading-tight"
               >
                 Your Sydney Bricklaying Contractors & Masonry Experts
               </motion.h1>
@@ -63,7 +64,7 @@ export default function WhoWeAre() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-base md:text-lg text-text leading-relaxed"
+              className="text-base text-text leading-relaxed"
             >
               We are local bricklayers dedicated to delivering exceptional
               brickwork and structural integrity across Sydney. From residential
@@ -80,12 +81,12 @@ export default function WhoWeAre() {
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center text-white px-6 py-4 rounded-xl shadow-xl bg-linear-to-r from-primary to-orange-600"
             >
-              <div className="text-4xl md:text-6xl font-bold mr-3">5+</div>
+              <div className="text-4xl md:text-5xl font-bold mr-3">5+</div>
               <div className="text-left">
-                <div className="font-semibold text-base md:text-lg">
+                <div className="font-semibold text-base md:text-md">
                   Years of Experience
                 </div>
-                <div className="text-main text-sm md:text-base font-medium">
+                <div className="text-main text-sm md:text-md font-medium">
                   Trusted Sydney Experts
                 </div>
               </div>
@@ -100,10 +101,10 @@ export default function WhoWeAre() {
             >
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-center sm:text-left">
-                  <h3 className="font-semibold text-secondary mb-1 text-base md:text-lg">
+                  <h3 className="font-semibold text-secondary mb-1 text-base md:text-md">
                     Ready to Start Your Project
                   </h3>
-                  <p className="text-text/70 text-sm">Get a free quote today</p>
+                  <p className="text-text/70 text-xs">Get a free quote today</p>
                 </div>
 
                 <motion.a
@@ -134,9 +135,8 @@ export default function WhoWeAre() {
             >
               <div className="relative rounded-xl overflow-hidden shadow-2xl">
                 <div className="aspect-video bg-linear-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                  {/* Replace with actual image */}
                   <Image
-                    src="/images/hero-bricklaying.jpg"
+                    src={img1}
                     alt="Professional bricklaying work in Sydney"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

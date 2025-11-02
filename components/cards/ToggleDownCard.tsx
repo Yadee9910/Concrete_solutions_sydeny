@@ -1,6 +1,6 @@
-
 "use client";
 
+import { motion } from "framer-motion";
 import { ChevronDownIcon } from "lucide-react";
 
 interface ToggleDownCardProps {
@@ -19,35 +19,53 @@ export default function ToggleDownCard({
   onToggle,
 }: ToggleDownCardProps) {
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300">
-      <button
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+    >
+      <motion.button
         onClick={() => onToggle(id)}
-        className="w-full flex justify-between items-center p-6 text-left bg-main hover:bg-secondary/5 cursor-pointer transition-colors duration-200"
+        whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.02)" }}
+        whileTap={{ scale: 0.98 }}
+        className="w-full flex justify-between items-center p-4 sm:p-5 md:p-6 text-left bg-main cursor-pointer transition-colors duration-200"
       >
-        <h2 className="text-lg tracking-wide font-bold text-secondary">{title}</h2>
-        
-        <div className="bg-secondary p-1 text-main rounded-full">
-            <ChevronDownIcon
-            className={`size-6 text-main transition-transform duration-300 ${
-                isOpen ? "rotate-180" : ""
-            }`}
-            />
-        </div>
-      </button>
+        <h3 className="text-base sm:text-lg tracking-wide font-bold text-secondary pr-4">
+          {title}
+        </h3>
 
-      <div
-        className={`transition-all duration-500 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="bg-secondary p-1 text-main rounded-full shrink-0"
+        >
+          <ChevronDownIcon className="size-5 sm:size-6 text-main" />
+        </motion.div>
+      </motion.button>
+
+      <motion.div
+        initial={false}
+        animate={{
+          height: isOpen ? "auto" : 0,
+          opacity: isOpen ? 1 : 0,
+        }}
+        transition={{
+          height: { duration: 0.4, ease: "easeInOut" },
+          opacity: { duration: 0.3, ease: "easeInOut" },
+        }}
+        className="overflow-hidden"
       >
-        <div className="px-6 py-2">
-          <p
-            className={`leading-7 text-text`}
-          >
+        <motion.div
+          initial={{ y: -10 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="px-4 sm:px-5 md:px-6 py-3 sm:py-4"
+        >
+          <p className="leading-6 sm:leading-7 text-sm text-text">
             {content}
           </p>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }

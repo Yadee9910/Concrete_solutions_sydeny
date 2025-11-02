@@ -28,7 +28,7 @@ export default function DeliveringExcellence() {
   return (
     <section
       ref={ref}
-      className="min-h-[88vh] flex flex-col gap-8 md:gap-12 mx-auto py-8 md:py-12 px-4 max-w-6xl"
+      className="min-h-[88vh] flex flex-col gap-8 mx-auto py-8 px-4 max-w-6xl"
     >
       {/* Header */}
       <motion.div
@@ -37,7 +37,7 @@ export default function DeliveringExcellence() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary leading-tight">
+        <h2 className="text-2xl md:text-4xl font-bold text-secondary leading-tight">
           Delivering Excellence Through{" "}
           <span className="text-primary block mt-2">
             Expertise and Dedication
@@ -65,14 +65,14 @@ export default function DeliveringExcellence() {
                 type: "spring",
                 stiffness: 150,
               }}
-              className="text-secondary font-bold text-5xl md:text-6xl lg:text-7xl"
+              className="text-secondary font-bold text-5xl md:text-6xl"
             >
               {stat.value}
             </motion.h3>
             <h4 className="text-primary font-semibold text-lg md:text-xl">
               {stat.label}
             </h4>
-            <p className="text-text leading-relaxed text-sm md:text-base">
+            <p className="text-text leading-relaxed text-sm md:text-md">
               {stat.description}
             </p>
           </motion.article>
@@ -90,7 +90,7 @@ export default function DeliveringExcellence() {
           <h3 className="text-xl md:text-2xl font-bold text-secondary">
             Ready to Start Your Project?
           </h3>
-          <p className="text-text text-sm md:text-base">
+          <p className="text-text text-sm md:text-md">
             Join 750+ satisfied clients who trusted us with their vision
           </p>
           <motion.button

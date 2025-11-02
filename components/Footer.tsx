@@ -17,7 +17,7 @@ export default function Footer() {
             <div>
               <Image
                 src={footerLogo}
-                alt="RRR Bricklaying Logo"
+                alt="Concrete Solutions Sydeny Bricklaying Logo"
                 width={90}
                 height={40}
               />
@@ -194,7 +194,7 @@ export default function Footer() {
         {/* Copyright Section */}
         <div className="mt-10 pt-8 border-t border-main/20 text-center">
           <p className="text-sm text-main/80">
-            © {new Date().getFullYear()} RRR Bricklaying. All rights reserved.
+            © {new Date().getFullYear()} Concrete Solutions Sydeny Bricklaying. All rights reserved.
           </p>
         </div>
       </div>

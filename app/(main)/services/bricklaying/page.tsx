@@ -1,12 +1,12 @@
 "use client"
 import ServicecontentCard from '@/components/cards/ServicecontentCard'
 import React from 'react'
-import { DropdownItemProps } from '../../about/page'
 import ToggleDownCard from '@/components/cards/ToggleDownCard';
 import { useState } from 'react';
 import AboutUsCard from '@/components/cards/AboutUsCard';
 import { DollarSign, Handshake, Leaf, MapPin } from 'lucide-react';
 import ServicePercentageCard from '@/components/cards/ServicePErcentageCard';
+import { DropdownItemProps } from '@/data/about';
 
 
 function Bricklaying() {
@@ -39,7 +39,7 @@ function Bricklaying() {
     <div className='flex flex-col gap-12'>
       <ServicecontentCard 
         title='Beautiful, Functional Gardens : Sydney’s Trusted Landscaping Experts'
-        description='At RRR Bricklaying, we specialize in creating custom outdoor environments designed specifically for your property. Each landscaping project combines beauty, functionality and sustainability to deliver spaces that look stunning and work for your lifestyle. From small residential gardens to large commercial landscapes, our experienced team ensures every detail from plant selection and turf installation to water features and garden enhancements is executed with precision. We focus on creating outdoor spaces that are low-maintenance, visually appealing and built to last, transforming your garden into a welcoming, functional retreat.'
+        description='At Concrete Solutions Sydeny Bricklaying, we specialize in creating custom outdoor environments designed specifically for your property. Each landscaping project combines beauty, functionality and sustainability to deliver spaces that look stunning and work for your lifestyle. From small residential gardens to large commercial landscapes, our experienced team ensures every detail from plant selection and turf installation to water features and garden enhancements is executed with precision. We focus on creating outdoor spaces that are low-maintenance, visually appealing and built to last, transforming your garden into a welcoming, functional retreat.'
       />
 
       {/* the toggledown card contents */}

@@ -89,7 +89,7 @@ export default function Header() {
             <Link href="/" onClick={closeMobileMenu} className="relative z-50">
               <Image
                 src={logo}
-                alt="RRR Bricklaying Logo"
+                alt="Concrete Solutions Sydeny Bricklaying Logo"
                 width={90}
                 height={40}
                 priority

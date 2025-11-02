@@ -11,10 +11,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://concrete-solutions-sydeny.vercel.app"),
   title: {
-    default: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
-    template: "%s | RRR Bricklaying",
+    default: "Concrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    template: "%s | Concrete Solutions Bricklaying",
   },
   description:
     "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney. 100% quality guaranteed. Get a free quote today!",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     "Seven Hills",
     "Western Sydney",
   ],
-  authors: [{ name: "RRR Bricklaying" }],
-  creator: "RRR Bricklaying",
-  publisher: "RRR Bricklaying",
+  authors: [{ name: "Concrete Solutions Bricklaying" }],
+  creator: "Concrete Solutions Bricklaying",
+  publisher: "Concrete Solutions Bricklaying",
   formatDetection: {
     email: false,
     address: false,
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     url: "https://yourdomain.com",
-    siteName: "RRR Bricklaying",
-    title: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    siteName: "Concrete Solutions Bricklaying",
+    title: "Concrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
     images: [
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
         url: "https://yourdomain.com/images/og-default.jpg",
         width: 1200,
         height: 630,
-        alt: "RRR Bricklaying",
+        alt: "Concrete Solutions Bricklaying",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RRR Bricklaying | Expert Bricklaying & Concrete Services Sydney",
+    title: "Concrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
     images: ["https://yourdomain.com/images/og-default.jpg"],

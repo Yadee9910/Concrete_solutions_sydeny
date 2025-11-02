@@ -1,29 +1,9 @@
 "use client";
 
+import { indicators } from "@/data/indicators";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { EarthIcon, HandCoins, NotepadText } from "lucide-react";
 
-const indicators = [
-  {
-    icon: EarthIcon,
-    title: "Reliable Local Brickies",
-    description:
-      "If you need a bricklayer for repairs, additions, or insurance work, our local brickies are ready to mobilise quickly across Sydney.",
-  },
-  {
-    icon: HandCoins,
-    title: "Start-to-Finish Project Management",
-    description:
-      "From excavation and site prep to final retaining wall installation, we handle the entire process with one reliable team",
-  },
-  {
-    icon: NotepadText,
-    title: "Transparent Pricing & Planning",
-    description:
-      "Get a clear breakdown of the retaining wall cost, concrete driveway cost, or any project price with a free, no-obligation quote today",
-  },
-];
 
 export default function Indicators() {
   const [ref, inView] = useInView({
@@ -32,7 +12,7 @@ export default function Indicators() {
   });
 
   return (
-    <section ref={ref} className="py-8 md:py-12 px-4 max-w-7xl mx-auto">
+    <section ref={ref} className="py-8 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
@@ -40,13 +20,25 @@ export default function Indicators() {
         className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
       >
         {indicators.map((indicator, index) => (
-          <motion.article
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
+          <motion.div
+            key={indicator.title}
+            initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            whileHover={{ y: -10, scale: 1.02 }}
-            className="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+            whileHover={{
+              y: -8,
+              scale: 1.03,
+              transition: {
+                duration: 0.4,
+                ease: "easeOut",
+              },
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5 + index * 0.1,
+              y: { duration: 0.2 },
+              scale: { duration: 0.2 },
+            }}
+            className="bg-white/80 backdrop-blur-sm shadow-lg border border-secondary/10 rounded-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-150 cursor-pointer"
           >
             <motion.div
               initial={{ scale: 0, rotate: -180 }}
@@ -67,7 +59,7 @@ export default function Indicators() {
             <p className="text-text text-sm text-center leading-relaxed">
               {indicator.description}
             </p>
-          </motion.article>
+          </motion.div>
         ))}
       </motion.div>
     </section>

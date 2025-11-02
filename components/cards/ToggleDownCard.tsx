@@ -24,7 +24,7 @@ export default function ToggleDownCard({
         onClick={() => onToggle(id)}
         className="w-full flex justify-between items-center p-6 text-left bg-main hover:bg-secondary/5 cursor-pointer transition-colors duration-200"
       >
-        <h2 className="text-xl font-bold text-gray-800">{title}</h2>
+        <h2 className="text-lg tracking-wide font-bold text-secondary">{title}</h2>
         
         <div className="bg-secondary p-1 text-main rounded-full">
             <ChevronDownIcon

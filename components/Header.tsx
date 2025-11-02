@@ -17,10 +17,8 @@ import { usePathname } from "next/navigation";
 
 const services = [
   { name: "Bricklaying", href: "/services/bricklaying" },
-  { name: "Concrete Driveways", href: "/services/concrete-driveways" },
-  { name: "Retaining Walls", href: "/services/retaining-walls" },
+  { name: "Retaining Walls", href: "/services/retaining" },
   { name: "Landscaping", href: "/services/landscaping" },
-  { name: "Paving", href: "/services/paving" },
 ];
 
 export default function Header() {
@@ -226,7 +224,7 @@ export default function Header() {
               exit={{ opacity: 0, x: "100%" }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="lg:hidden fixed inset-0 bg-white z-40 overflow-y-auto"
-              style={{ top: "72px" }} // Start below header
+              style={{ top: "72px" }} 
             >
               <nav className="px-6 py-8">
                 <ul className="flex flex-col gap-1">

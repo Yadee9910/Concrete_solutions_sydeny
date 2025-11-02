@@ -8,7 +8,8 @@ interface HeroCardProps {
 
 function HeroCard({title,page,btn}:HeroCardProps) {
   return (
-    <div className="bg-secondary w-full p-8 text-main flex flex-col rounded-lg">
+    <div className='mx-12'>
+    <div className="bg-secondary w-full py-8 px-16 text-main flex flex-col rounded-lg">
       <div className="bg- rounded-lg p-8 md:p-16 flex flex-col gap-4">
         <p className="text-base font-semibold bg-primary w-fit py-2 px-4 rounded-3xl">{btn}</p>
         <h2 className="text-3xl md:text-5xl font-bold">{title}</h2>
@@ -19,6 +20,8 @@ function HeroCard({title,page,btn}:HeroCardProps) {
                 <span className='text-main'>{page}</span>
         </div>
       </div>
+    </div>
+
     </div>
 
   )

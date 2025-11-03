@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://concrete-solutions-sydeny.vercel.app"),
+  metadataBase: new URL("https://concrete-solutions-sydeny.vercel.app/"),
   title: {
     default: "Concrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     template: "%s | Concrete Solutions Bricklaying",
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_AU",
-    url: "https://yourdomain.com",
+    url: "https://concrete-solutions-sydeny.vercel.app/",
     siteName: "Concrete Solutions Bricklaying",
     title: "Concrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
     images: [
       {
-        url: "https://yourdomain.com/images/og-default.jpg",
+        url: "https://concrete-solutions-sydeny.vercel.app/images/og-default.jpg",
         width: 1200,
         height: 630,
         alt: "Concrete Solutions Bricklaying",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Concrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
-    images: ["https://yourdomain.com/images/og-default.jpg"],
+    images: ["https://concrete-solutions-sydeny.vercel.app/images/og-default.jpg"],
   },
   robots: {
     index: true,

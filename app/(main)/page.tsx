@@ -23,17 +23,17 @@ export const metadata: Metadata = {
     "concrete services Sydney",
   ],
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: "https://concrete-solutions-sydeny.vercel.app/",
   },
   openGraph: {
     title: "COncrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney. 5+ years experience. 100% quality guaranteed.",
-    url: "https://yourdomain.com",
+    url: "https://concrete-solutions-sydeny.vercel.app/",
     siteName: "COncrete Solutions Bricklaying",
     images: [
       {
-        url: "https://yourdomain.com/images/og-home.jpg",
+        url: "https://concrete-solutions-sydeny.vercel.app/images/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "COncrete Solutions Bricklaying Services Sydney",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "COncrete Solutions Bricklaying | Expert Bricklaying & Concrete Services Sydney",
     description:
       "Professional bricklaying, concrete driveways, retaining walls & masonry services in Sydney.",
-    images: ["https://yourdomain.com/images/og-home.jpg"],
+    images: ["https://concrete-solutions-sydeny.vercel.app/images/og-home.jpg"],
   },
   robots: {
     index: true,
@@ -68,8 +68,8 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "COncrete Solutions Bricklaying",
-    url: "https://yourdomain.com",
-    logo: "https://yourdomain.com/images/logo.png",
+    url: "https://concrete-solutions-sydeny.vercel.app/",
+    logo: "https://concrete-solutions-sydeny.vercel.app/images/logo.png",
     description:
       "Expert bricklaying and concrete services in Sydney with 5+ years of experience",
     address: {

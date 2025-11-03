@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+
 import { calculateReadTime, formatDate } from "@/components/helpers/blogHelper";
 import TiptapViewer from "@/components/admin/editor/TiptapViewer";
-
 
 interface BlogPost {
   id: number;
@@ -29,12 +29,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
   try {
     const response = await fetch(
-      `${
-        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-      }/api/blog/slug/${slug}`,
+      `${baseUrl}/api/blog/slug/${slug}`,
       {
         cache: "no-store",
       }
@@ -47,15 +46,38 @@ export async function generateMetadata({
     }
 
     const post: BlogPost = await response.json();
+    const canonicalUrl = `${baseUrl}/blogs/${slug}`;
+    const imageUrl = post.imageUrl || `${baseUrl}/images/og-default.jpg`;
 
     return {
-      title: `${post.title} | Concrete Solutions Sydeny Bricklaying Blog`,
+      title: `${post.title} | RRR Bricklaying Blog`,
       description: post.description,
+      alternates: {
+        canonical: canonicalUrl,
+      },
       openGraph: {
         title: post.title,
         description: post.description,
-        images: post.imageUrl ? [post.imageUrl] : [],
+        url: canonicalUrl,
+        siteName: "RRR Bricklaying",
+        images: [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
         type: "article",
+        publishedTime: post.createdAt,
+        modifiedTime: post.updatedAt,
+        authors: post.author ? [post.author] : ["RRR Bricklaying"],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description,
+        images: [imageUrl],
       },
     };
   } catch (error) {
@@ -131,8 +153,57 @@ export default async function BlogDetail({
   const readTime = blogPost.readTime || calculateReadTime(blogPost.content);
   const formattedDate = formatDate(blogPost.createdAt);
 
+  // BlogPosting JSON-LD Schema
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blogPost.title,
+    description: blogPost.description,
+    image: blogPost.imageUrl || `${baseUrl}/images/og-default.jpg`,
+    datePublished: blogPost.createdAt,
+    dateModified: blogPost.updatedAt,
+    author: {
+      "@type": blogPost.author ? "Person" : "Organization",
+      name: blogPost.author || "RRR Bricklaying",
+      ...(blogPost.author
+        ? {}
+        : {
+            url: baseUrl,
+            logo: {
+              "@type": "ImageObject",
+              url: `${baseUrl}/images/logo.png`,
+            },
+          }),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "RRR Bricklaying",
+      url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/images/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/blogs/${slug}`,
+    },
+    ...(blogPost.tags && blogPost.tags.length > 0
+      ? { keywords: blogPost.tags.join(", ") }
+      : {}),
+  };
+
   return (
     <div>
+      {/* JSON-LD BlogPosting Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(blogPostingSchema),
+        }}
+      />
+
       <HeroCard title={blogPost.title} page="OUR BLOG" btn="Our Blog" />
 
       <main className="container mx-auto px-4 lg:px-8 py-8">

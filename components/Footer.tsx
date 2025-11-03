@@ -104,8 +104,8 @@ export default function Footer() {
                   { name: "About", href: "/about" },
                   { name: "Blogs", href: "/blogs" },
                   { name: "Contact", href: "/contact" },
-                  { name: "Privacy Policy", href: "/privacy-policy" },
-                  { name: "Terms and Conditions", href: "/terms" },
+                  // { name: "Privacy Policy", href: "/privacy-policy" },
+                  // { name: "Terms and Conditions", href: "/terms" },
                 ].map((link) => (
                   <li key={link.name}>
                     <Link
@@ -130,22 +130,9 @@ export default function Footer() {
                   { name: "Landscaping", href: "/services/landscaping" },
                   {
                     name: "Retaining Walls",
-                    href: "/services/retaining-walls",
+                    href: "/services/retaining",
                   },
-                  {
-                    name: "Concrete Driveways",
-                    href: "/services/concrete-driveways",
-                  },
-                  {
-                    name: "Decorative Concrete",
-                    href: "/services/decorative-concrete",
-                  },
-                  { name: "Paving", href: "/services/paving" },
-                  { name: "Excavation", href: "/services/excavation" },
-                  {
-                    name: "Concrete Solution",
-                    href: "/services/concrete-solution",
-                  },
+                  
                 ].map((service) => (
                   <li key={service.name}>
                     <Link

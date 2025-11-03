@@ -8,7 +8,7 @@ A modern, SEO-optimized website for Concrete Solutions Sydney Bricklaying, featu
 
 - **Production Website**: https://concrete-solutions-sydeny.vercel.app/
 - **Admin Dashboard**: https://concrete-solutions-sydeny.vercel.app/admin/login
-- **Database**: Hosted on (https://neon.tech/)
+- **Database**: Hosted on https://neon.tech/
 
 ---
 
@@ -351,4 +351,3 @@ npx prisma generate
 
 ---
 
-**Built with Next.js 16 | Deployed on Vercel | Database on Neon**

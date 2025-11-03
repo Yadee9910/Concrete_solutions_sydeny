@@ -1,6 +1,39 @@
+import { Metadata } from "next";
 import HeroCard from "@/components/cards/HeroCard";
 import ContactForm from "@/components/ContactForm";
 import { Clock, Mail, Phone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Concrete Solutions Sydney Bricklaying",
+  description:
+    "Get in touch with Concrete Solutions Sydney Bricklaying for expert bricklaying, concrete, and landscaping services in Sydney. Call us at 042 955 0837 or email info@Concrete Solutions Sydneybricklaying.com.au for a free quote.",
+  alternates: {
+    canonical: "https://concrete-solutions-sydeny.vercel.app/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Concrete Solutions Sydney Bricklaying",
+    description:
+      "Get in touch with Concrete Solutions Sydney Bricklaying for expert bricklaying, concrete, and landscaping services in Sydney. Free quotes available.",
+    url: "https://concrete-solutions-sydeny.vercel.app/contact",
+    siteName: "Concrete Solutions Sydney Bricklaying",
+    images: [
+      {
+        url: "https://concrete-solutions-sydeny.vercel.app/images/og-contact.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Concrete Solutions Sydney Bricklaying",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Concrete Solutions Sydney Bricklaying",
+    description:
+      "Get in touch with Concrete Solutions Sydney Bricklaying for expert bricklaying, concrete, and landscaping services in Sydney.",
+    images: ["https://concrete-solutions-sydeny.vercel.app/images/og-contact.jpg"],
+  },
+};
 
 function Contact() {
   return (

@@ -46,7 +46,7 @@ function RetainingWallsContent() {
     <div className='flex flex-col gap-12'>
       <ServicecontentCard 
         title='Strong, Stylish Retaining Walls : Sydney’s Trusted Experts'
-        description='At RRR Bricklaying, we specialize in designing and building durable, attractive retaining walls across Sydney. Whether you need to manage sloping terrain, create level garden areas or add structure and visual appeal to your property, our team delivers precision, strength and style in every wall. We combine expert craftsmanship, quality materials and innovative design to provide long-lasting solutions that enhance your landscape and property value. From residential gardens to commercial projects, we ensure every retaining wall is engineered for safety, functionality and aesthetic excellence.'
+        description='At Concrete Solution Sydney Bricklaying, we specialize in designing and building durable, attractive retaining walls across Sydney. Whether you need to manage sloping terrain, create level garden areas or add structure and visual appeal to your property, our team delivers precision, strength and style in every wall. We combine expert craftsmanship, quality materials and innovative design to provide long-lasting solutions that enhance your landscape and property value. From residential gardens to commercial projects, we ensure every retaining wall is engineered for safety, functionality and aesthetic excellence.'
       />
 
       {/* the toggledown card contents */}
@@ -79,7 +79,7 @@ function RetainingWallsContent() {
           <ServicePercentageCard
             title="Save More on Durable Retaining Wall Projects"
             percentage="75%+"
-            percentageText="Choose RRR Bricklaying and Enjoy up to 75% savings compared to major Sydney retaining wall contractors."
+            percentageText="Choose Concrete Solution Sydney Bricklaying and Enjoy up to 75% savings compared to major Sydney retaining wall contractors."
             description="Through in house equipment, local sourcing and efficient site preparation, we keep costs down while maintaining exceptional construction quality."
             icon="check"
             variant="secondary"

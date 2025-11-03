@@ -52,7 +52,7 @@ function LandscapingContent() {
     <div className='flex flex-col gap-12'>
       <ServicecontentCard 
         title='Beautiful, Functional Gardens : Sydney’s Trusted Landscaping Experts'
-        description='At RRR Bricklaying, we specialize in creating custom outdoor environments designed specifically for your property. Each landscaping project combines beauty, functionality and sustainability to deliver spaces that look stunning and work for your lifestyle. From small residential gardens to large commercial landscapes, our experienced team ensures every detail from plant selection and turf installation to water features and garden enhancements is executed with precision. We focus on creating outdoor spaces that are low-maintenance, visually appealing and built to last, transforming your garden into a welcoming, functional retreat.'
+        description='At Concrete Solutions Sydeny Bricklaying, we specialize in creating custom outdoor environments designed specifically for your property. Each landscaping project combines beauty, functionality and sustainability to deliver spaces that look stunning and work for your lifestyle. From small residential gardens to large commercial landscapes, our experienced team ensures every detail from plant selection and turf installation to water features and garden enhancements is executed with precision. We focus on creating outdoor spaces that are low-maintenance, visually appealing and built to last, transforming your garden into a welcoming, functional retreat.'
       />
 
       {/* the toggledown card contents */}
@@ -85,7 +85,7 @@ function LandscapingContent() {
           <ServicePercentageCard
             title="Affordable Landscaping, Exceptional Quality"
             percentage="80%+"
-            percentageText="Choose RRR Bricklaying and Save 80% or more compared to major Sydney landscaping firms."
+            percentageText="Choose Concrete Solutions Sydeny Bricklaying and Save 80% or more compared to major Sydney landscaping firms."
             description="Our in-house team and streamlined process eliminate unnecessary costs, allowing us to deliver premium results within budget."
             icon="check"
             variant="secondary"

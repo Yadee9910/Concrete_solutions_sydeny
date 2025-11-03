@@ -17,7 +17,7 @@ interface FAQSectionProps {
 const defaultFAQItems: FAQItem[] = [
   {
     question: "Which specific services do you offer, and what is your local service area?",
-    answer: "RRR Bricklaying offers a complete solution covering Bricklaying, Landscaping, Retaining Walls, Concrete Driveways, Decorative Concrete, Paving, Excavation, and Concrete Solution. We proudly serve Seven Hills and the greater Sydney area within a 30km radius, acting as your trusted local bricklayers near me.",
+    answer: "Concrete Solution Sydney Bricklaying offers a complete solution covering Bricklaying, Landscaping, Retaining Walls, Concrete Driveways, Decorative Concrete, Paving, Excavation, and Concrete Solution. We proudly serve Seven Hills and the greater Sydney area within a 30km radius, acting as your trusted local bricklayers near me.",
     isOpen: true
   },
   {

@@ -50,7 +50,7 @@ export async function generateMetadata({
     const imageUrl = post.imageUrl || `${baseUrl}/images/og-default.jpg`;
 
     return {
-      title: `${post.title} | RRR Bricklaying Blog`,
+      title: `${post.title} | Concrete Solutions Sydeny Bricklaying Blog`,
       description: post.description,
       alternates: {
         canonical: canonicalUrl,
@@ -59,7 +59,7 @@ export async function generateMetadata({
         title: post.title,
         description: post.description,
         url: canonicalUrl,
-        siteName: "RRR Bricklaying",
+        siteName: "Concrete Solutions Sydeny Bricklaying",
         images: [
           {
             url: imageUrl,
@@ -71,7 +71,7 @@ export async function generateMetadata({
         type: "article",
         publishedTime: post.createdAt,
         modifiedTime: post.updatedAt,
-        authors: post.author ? [post.author] : ["RRR Bricklaying"],
+        authors: post.author ? [post.author] : ["Concrete Solutions Sydeny Bricklaying"],
       },
       twitter: {
         card: "summary_large_image",
@@ -165,7 +165,7 @@ export default async function BlogDetail({
     dateModified: blogPost.updatedAt,
     author: {
       "@type": blogPost.author ? "Person" : "Organization",
-      name: blogPost.author || "RRR Bricklaying",
+      name: blogPost.author || "Concrete Solutions Sydeny Bricklaying",
       ...(blogPost.author
         ? {}
         : {
@@ -178,7 +178,7 @@ export default async function BlogDetail({
     },
     publisher: {
       "@type": "Organization",
-      name: "RRR Bricklaying",
+      name: "Concrete Solutions Sydeny Bricklaying",
       url: baseUrl,
       logo: {
         "@type": "ImageObject",

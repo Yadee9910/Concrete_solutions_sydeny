@@ -45,10 +45,10 @@ export default function BlogSection() {
   return (
     <section
       ref={ref}
-      className="min-h-[88vh] flex flex-col gap-8 md:gap-10 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 py-12 md:py-16 lg:py-20"
+      className="min-h-[88vh] flex flex-col gap-8 md:gap-10 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32 py-10"
     >
       {/* Container with background */}
-      <div className="w-full bg-secondary/5 rounded-2xl p-6 md:p-10 lg:p-12 xl:p-16 2xl:p-20 flex flex-col gap-8 md:gap-12">
+      <div className="w-full bg-secondary/5 rounded-2xl p-6 md:p-10 lg:p-12 xl:p-16 flex flex-col gap-8 md:gap-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,10 +56,10 @@ export default function BlogSection() {
           transition={{ duration: 0.6 }}
           className="flex flex-col gap-3 text-center"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-secondary tracking-wide">
+          <h2 className="text-3xl md:text-4xl xl:text-6xl font-bold text-secondary tracking-wide">
             Latest Blogs
           </h2>
-          <p className="text-text text-base md:text-lg lg:text-xl mx-auto max-w-3xl">
+          <p className="text-text text-base md:text-lg mx-auto max-w-3xl">
             Discover our latest insights, tips, and stories
           </p>
         </motion.div>
@@ -108,13 +108,13 @@ export default function BlogSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex justify-center pt-4"
+            className="flex justify-center"
           >
             <Link href="/blogs">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-secondary hover:bg-secondary/90 rounded-full flex items-center gap-2 py-3 px-8 md:py-4 md:px-10 text-sm md:text-base lg:text-lg text-main font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-secondary hover:bg-secondary/90 rounded-full flex items-center gap-2 py-3 px-8 text-sm md:text-md text-main font-medium shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 View All Blogs
                 <ArrowRight className="size-4 md:size-5" />

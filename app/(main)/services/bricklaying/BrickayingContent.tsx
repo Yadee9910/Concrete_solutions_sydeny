@@ -52,7 +52,7 @@ function BricklayingContent() {
     <div className='flex flex-col gap-12'>
       <ServicecontentCard 
         title='Sydney’s Trusted Bricklaying Experts for Quality Builds'
-        description='When it comes to professional bricklaying in Sydney, RRR Bricklaying sets the standard for precision, durability and design excellence. Whether you are building a new home, extending your property or repairing existing structures our skilled bricklayers deliver exceptional craftsmanship that enhances both strength and aesthetics. Based in Seven Hills, we’re trusted across Western Sydney and The Hills District for providing reliable, affordable and high-quality bricklaying services that stand the test of time. From structural builds to decorative finishes, we bring experience, attention to detail and passion to every project.'
+        description='When it comes to professional bricklaying in Sydney, Concrete Solutions Sydeny Bricklaying sets the standard for precision, durability and design excellence. Whether you are building a new home, extending your property or repairing existing structures our skilled bricklayers deliver exceptional craftsmanship that enhances both strength and aesthetics. Based in Seven Hills, we’re trusted across Western Sydney and The Hills District for providing reliable, affordable and high-quality bricklaying services that stand the test of time. From structural builds to decorative finishes, we bring experience, attention to detail and passion to every project.'
       />
 
       {/* the toggledown card contents */}
@@ -85,7 +85,7 @@ function BricklayingContent() {
           <ServicePercentageCard
             title="Quality Work, Affordable Prices"
             percentage="100%+"
-            percentageText="Choose RRR Bricklaying and save an average of 90% or more compared to major Sydney bricklaying firms."
+            percentageText="Choose Concrete Solutions Sydeny Bricklaying and save an average of 90% or more compared to major Sydney bricklaying firms."
             description="We achieve this through efficient project management and direct, transparent communication, eliminating unnecessary costs."
             icon="check"
             variant="secondary"
